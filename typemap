@@ -1,0 +1,18 @@
+LLVM *	T_LLVM
+LLVM::Compiled *	T_LLVM
+
+INPUT
+
+T_LLVM
+        if (sv_derived_from($arg, \"Imager::Engine::$type\")) {
+            IV tmp = SvIV((SV*)SvRV($arg));
+            $var = INT2PTR($type,tmp);
+        }
+        else
+            croak(\"$var is not of type Imager::Engine::$type\");
+
+
+OUTPUT
+
+T_LLVM
+        sv_setref_pv($arg, \"Imager::Engine::$type\", (void*)$var);
